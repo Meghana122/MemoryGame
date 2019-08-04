@@ -10,7 +10,7 @@ def path(filename):
     fullpath = os.path.join(dirpath, filename)
     return fullpath
 
-car = path('car.gif')
+car = path('memoryimg.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
