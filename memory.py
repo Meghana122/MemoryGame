@@ -1,18 +1,14 @@
-"""Memory, puzzle game of number pairs.
 
-Exercises:
-
-1. Count and print how many taps occur.
-2. Decrease the number of tiles to a 4x4 grid.
-3. Detect when all tiles are revealed.
-4. Center single-digit tile.
-5. Use letters instead of tiles.
-
-"""
 
 from random import *
 from turtle import *
-from freegames import path
+import os
+
+def path(filename):
+    filepath = os.path.realpath(__file__)
+    dirpath = os.path.dirname(filepath)
+    fullpath = os.path.join(dirpath, filename)
+    return fullpath
 
 car = path('car.gif')
 tiles = list(range(32)) * 2
@@ -24,7 +20,7 @@ def square(x, y):
     up()
     goto(x, y)
     down()
-    color('black', 'white')
+    color('black', 'pink')
     begin_fill()
     for count in range(4):
         forward(50)
@@ -77,6 +73,8 @@ def draw():
 
 shuffle(tiles)
 setup(420, 420, 370, 0)
+title("Memory Game : Flipping Tiles")
+bgcolor('orange')
 addshape(car)
 hideturtle()
 tracer(False)
